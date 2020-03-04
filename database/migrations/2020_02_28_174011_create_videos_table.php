@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMovablesTable extends Migration
+class CreateVideosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateMovablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('movables', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->morphs('movable');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateMovablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movables');
+        Schema::dropIfExists('videos');
     }
 }
